@@ -15,13 +15,13 @@ function saveOnChange(event) {
 }
 
 function checkLocalStorage() {
-  const formData = localStorage.getItem(LOCAL_KEY);
+  const localformData = localStorage.getItem(LOCAL_KEY);
 
-  if (formData === null) {
+  if (localformData === null) {
     return;
   }
 
-  const parsedFormData = JSON.parse(formData);
+  const parsedFormData = JSON.parse(localformData);
 
   for (const [name, value] of Object.entries(parsedFormData)) {
     form.elements[name].value = value;
